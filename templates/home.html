@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=7.5">
+    <link rel="icon" href="/static/css/Georgia2.png" type="image.png" sizes="16x32">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+    <title>home</title>
+  </head>
+  <body>
+    <div id="Main_div_container">
+      <!-- Это шапка -->
+      <header id="headr_con">
+        <div id="head_con_pic">
+          <a href="/"><div id="geo"></div></a>
+        </div>
+        <div id="head_con_search">
+          <ul id ="head_lister">
+            <li><a href="/home"><div class="lung" id="English"><p>English</p></div></a></li>
+            <li><a href="/kar/home"><div class="lung" id="kar"><p>ქართული</p></div></a></li>
+          </ul>
+        </div>
+        <div id="head_con_main">
+          <div id="fixed"></div>
+          <div id ="main_fon">
+            <!--   <input type="checkbox" id= "burger_toggle">
+            <label id="label" for="checkbox">
+              <span id ="span"></span>
+            </label>-->
+            <ul id="head_main" class="overlay">
+              <li><div class="main"><a href="/news"><p class="ms">News</p></a></div></li>
+              <li><div class="main"><a href="/info"><p class="ms">About Georgia</p></a></div></li>
+              <li><div class="main"><a href="/history"><p class="ms">History Georgia</p></a></div></li>
+              <li><div class="main"><a href="/photo"><p class="ms">Photo</p></a></div></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <!-- Конец шапки -->
+      <!-- Это основа -->
+      <main id="main_con">
+        <ul id="main_constr1">
+          <li id="block1" class="block">
+            <div id="main_con_basiss">
+                <div id="main_hight_basiss1">GEORGIA</div>
+
+                <div id="main_hight_basiss2">
+                  <div id="basiss1">Akaki Tsereteli: "Georgia is not a country, it</div>
+                  <div id="basiss2">is a soul. It is a song that resounds in the</div>
+                  <div id="basiss3">heart of every Georgian."</div>
+                  <div id="block0_redirect"><a href="/info/3">view</a></div>
+              </div>
+            </div>
+            <div id="main_block_photo"></div>
+          </li>
+          <li id="block2" class="block">
+                <!-- block2 Текст -->
+            <div id="block2_con_text">
+              <div id="block2_big_text" >GEORGIANS</div>
+              <div id="block2_text"><p id ="text">Merab Mamardashvili : "...every Georgian is his own state, every king. He cannot submit to anyone else. This is what saved Georgia from total slavery; it could never be conquered, because to do so would have required the extermination of everyone. On the other hand, this is what destroyed Georgia as a unified state."</p></div>
+              <div id="block2_redirect"><a href="/info/4">view</a></div>
+            </div>
+            <!-- Конец текстф-->
+            <div id="block2_pic"></div>
+          </li>
+          <li id="block3" class="block">
+            <div id="block3_con_text">
+              <div id="block3_big_text" >GEORGIA</div>
+              <div id="block3_text"><p id ="text1">Georgia bridges continents, where the Greater Caucasus Mountains hold traces of prehistoric people, and ancient wines and frescoes evoke medieval empires' golden age. Tbilisi, with its sulfur baths and winding streets, embodies the hospitality and resilience of a people enduring Persian, Arab, Mongol, Ottoman, and Russian conquests.
+Architecture is iconic: Vardzia's 12th-century frescoes (underground monastic city) and UNESCO-listed Svan towers. Khorumi dances (warlike) and panduri/chonguri music form core identity. In 2025, culture is pitched as "universal heritage": three UNESCO sites (Gelati, Mtskheta, Upper Svaneti), plus Getty Foundation restoration grants. Cuisine shines: khachapuri, khinkali, and qvevri wines (8,000-year tradition, UNESCO 2013) exported worldwide.</p></div>
+              <div id="block3_redirect"><a href="/history">view</a></div>
+            </div>
+          </li>
+        </ul>
+      </main>
+      <!-- Конец основы -->
+      <!-- Это стопа -->
+      <footer id="footer_con">
+        <div id="block"> <!-- Исправлено: "bockk" → "block", добавлены кавычки -->
+                <div id="me"><a href="/police"><h1 id ="police">Privacy Policy</h1></a>about me</div>
+                <div id="media">
+                    <ul id="media_con"> <!-- Добавлены кавычки в id -->
+                        <li><a href="/"><div class="meedia" id="tgk"></div></a></li> <!-- Закрыт <a> -->
+                        <li><a href="/"><div class="meedia" id="facebook"></div></a></li> <!-- Закрыт <a> -->
+                        <li><a href="/"><div class="meedia" id="inst_new"></div></a></li> <!-- Закрыт <a> -->
+                    </ul>
+                </div>
+            </div>
+      </footer>
+      <!-- Конец стопы -->
+    </div>
+    <script>
+(function () {
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+  function adjustBody() {
+    if (isMobile()) {
+      document.body.style.display = 'block';
+      document.body.style.height = 'auto'; // иначе 4400px обрежет контент
+    }
+    // Иначе ничего не делаем — остаётся flex из CSS
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', adjustBody);
+  } else {
+    adjustBody();
+  }
+})();
+</script>
+  </body>
+</html>

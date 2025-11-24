@@ -1,0 +1,38 @@
+{% extends 'about_geo.html' %}
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/photo.css') }}">
+{% endblock %}
+{% block title %}
+    Photo Georgia
+{% endblock %}
+{% block main %}
+    <div id="container_photo">
+        <div>
+            <div id="h11t"><h1>Create posts</h1></div>
+            {% if error %}
+                <p class="error">{{ error }}</p> <!-- Добавил отображение ошибок -->
+            {% endif %}
+            <form method="post">
+                <label for="key">key</label><br>
+                <input type="text" name="key" id="key" placeholder="write something"><br> <!-- Изменил type на text -->
+                <label for="title">write title</label><br>
+                <input type="text" name="title" id="title" placeholder="write something"><br>
+                <label for="intro">write intro</label><br>
+                <input type="text" name="intro" id="intro" placeholder="write something"><br> <!-- Изменил type на text -->
+                <label for="text">write text</label><br>
+              <textarea maxlength="10000" type="text" name="text" id="text" placeholder="write something"></textarea><br><br>
+                <label for="text2">write text2</label><br>
+           <textarea maxlength="10000" type="text" name="text2" id="text2" placeholder="write something"></textarea><br><br>
+                <label for="text3">write text3</label><br>
+             <textarea maxlength="10000" type="text" name="text3" id="text3" placeholder="write something"></textarea><br><br>
+                <label for="image_path">write url photo</label><br>
+                <input type="url" name="image_path" id="image_path" placeholder="write something"><br><br> <!-- type=url для валидации -->
+                <label for="image_path1">write url photo1</label><br> <!-- Исправил for и опечатку с <br> -->
+                <input type="url" name="image_path1" id="image_path1" placeholder="write something"><br><br> <!-- type=url -->
+                <label for="image_path2">write url photo2</label><br> <!-- Исправил for -->
+                <input type="url" name="image_path2" id="image_path2" placeholder="write something"><br><br> <!-- type=url -->
+                <input id="sum" type="submit" value="Accept">
+            </form>
+        </div>
+    </div>
+{% endblock %}

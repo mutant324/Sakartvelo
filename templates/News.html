@@ -1,0 +1,101 @@
+{% extends 'about_geo.html' %}
+{% block link %} <link rel="stylesheet" href="{{url_for('static', filename='css/News.css')}}">{% endblock %}
+{% block title %} Photo Georgia{% endblock %}
+{%block translate%}<li><a href="/news"><div class="lung" id="English"><p>English</p></div></a></li>
+  <li><a href="/kar/news"><div class="lung" id="kar"><p>ქართული</p></div></a></li>{% endblock%}
+
+{% block main %}
+<div id="Con1">
+    <div class="name">
+        <p class="name_2">Other public</p>
+    </div>
+    <div class="next_part">
+
+
+    {% if inform %}
+        {% for el in inform[:1]%}
+
+            <div class="post-item2">
+                <a href="/info/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+                {% if el.image_path %}
+                <a href="/info/{{ el.id }}">
+                  <img class="post-image" src="{{ el.image_path }}" alt="oh..no">
+                </a>
+                {% endif %}
+                <a href="/info/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+                <a href="/info/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M')}}</p></a>
+                <a href="/info/{{ el.id }}"><p class ="left_block_ff">more details</p></a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>oh...no</p>
+    {% endif %}
+
+  {% if histor %}
+      {% for el in histor[:1]%}
+
+          <div class="post-item2">
+              <a href="/history/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+              {% if el.image_path %}
+              <a href="/history/{{ el.id }}">
+                <img class="post-image" src="{{ el.image_path }}" alt="oh..no">
+              </a>
+              {% endif %}
+              <a href="/history/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+              <a href="/history/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M')}}</p></a>
+              <a href="/history/{{ el.id }}"><p class ="left_block_ff">more details</p></a>
+          </div>
+      {% endfor %}
+  {% else %}
+      <p>oh...no</p>
+  {% endif %}
+  </div>
+</div>
+<div id="Con2">
+    <div class="posts1">
+        {% if artic %}
+            {% for el in artic %}
+                <div class="post-item1">
+                  <div id =popa>  <a href="/news/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+                    {% if el.image_path %}
+                    <a href="/news/{{ el.id }}">
+                      <img class="post-image" src="{{ el.image_path }}" alt="oh..no">
+                    </a>
+                    {% endif %}
+                    <a href="/news/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+                    <a href="/news/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M') }}</p></a>
+                  </div>
+                    <div id=jopa><a href="/news/{{ el.id }}"><p id ="fffd">more details</p></a></div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>oh...no</p>
+        {% endif %}
+    </div>
+</div>
+<div id="Con3">
+    <div class="name3">
+        <p class="name_23">New posts</p>
+    </div>
+    <div class="posts">
+        {% if articles %}
+            {% for el in articles[:3]%}
+
+                <div class="post-item">
+                    <a href="/news/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+                    {% if el.image_path %}
+                    <a href="/news/{{ el.id }}">
+                      <img class="post-image" src="{{ el.image_path }}" alt="oh..no">
+                    </a>
+                    {% endif %}
+                    <a href="/news/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+                    <a href="/news/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M')}}</p></a>
+                    <a href="/news/{{ el.id }}"><p id ="ff">more details</p></a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>oh...no</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

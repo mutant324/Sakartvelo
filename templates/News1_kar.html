@@ -1,0 +1,121 @@
+{% extends 'about_geo_kar.html' %}
+{% block link %} <link rel="stylesheet" href="{{url_for('static', filename='css/News1.css')}}">{% endblock %}
+{% block title %} Photo Georgia{% endblock %}
+{%block translate%}<li><a href="/news/{{ artic.id }}"><div class="lung" id="English"><p>English</p></div></a></li>
+  <li><a href="/kar/news/{{ artic.id }}"><div class="lung" id="kar"><p>ქართული</p></div></a></li>{% endblock%}
+
+{% block main %}
+<div id="Con1">
+    <div class="name">
+        <p class="name_2">სხვა პოსტები</p>
+    </div>
+    <div class="next_part">
+
+
+    {% if inform %}
+        {% for el in inform[:1]%}
+
+            <div class="post-item2">
+                <a href="/info/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+                {% if el.image_path %}
+                <a href="/info/{{ el.id }}">
+                  <img class="post-image" src="{{ el.image_path }}" alt="oh..no">
+                </a>
+                {% endif %}
+                <a href="/info/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+                <a href="/info/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M')}}</p></a>
+                <a href="/info/{{ el.id }}"><p class ="left_block_ff">მეტი დეტალი</p></a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>oh...no</p>
+    {% endif %}
+
+  {% if histor %}
+      {% for el in histor[:1]%}
+
+          <div class="post-item2">
+              <a href="/history/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+              {% if el.image_path %}
+              <a href="/history/{{ el.id }}">
+                <img class="post-image" src="{{ el.image_path }}" alt="oh..no">
+              </a>
+              {% endif %}
+              <a href="/history/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+              <a href="/history/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M')}}</p></a>
+              <a href="/history/{{ el.id }}"><p class ="left_block_ff">მეტი დეტალი</p></a>
+          </div>
+      {% endfor %}
+  {% else %}
+      <p>oh...no</p>
+  {% endif %}
+  </div>
+</div>
+<div id="Con2">
+  <div class="posts1">
+      {% if artic %}
+
+              <div class="post-item1">
+                <h1>{{ artic.title }}</h1>
+                 <p>{{ artic.text }}</p><br>
+                {% if artic %}
+                  <img  id="myImage" src="{{ artic.image_path }}" alt="oh..no"  onclick="openModal()">
+                <div id="myModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="img01" src="">
+                    <h1 id ="gf">{{ artic.title }}</h1>
+                </div>
+                {% endif %}
+                 <p>{{ artic.text2 }}</p><br>
+                 {% if artic.image_path1 %}
+                   <img  id="myImage" src="{{ artic.image_path1 }}" alt="oh..no"  onclick="openModal()">
+                 <div id="myModal" class="modal">
+                     <span class="close" onclick="closeModal()">&times;</span>
+                     <img class="modal-content" id="img01" src="">
+                     <h1 id ="gf">{{ artic.title }}</h1>
+                 </div>
+                 {% endif %}
+                  <p>{{ artic.text3 }}</p><br>
+                  {% if artic.image_path2 %}
+                    <img  id="myImage" src="{{ artic.image_path2 }}" alt="oh..no"  onclick="openModal()">
+                  <div id="myModal" class="modal">
+                      <span class="close" onclick="closeModal()">&times;</span>
+                      <img class="modal-content" id="img01" src="">
+                      <h1 id ="gf">{{ artic.title }}</h1>
+                  </div>
+                  {% endif %}
+                 <p>{{artic.datetime.strftime('%d.%m.%Y %H:%M') }}</p>
+              </div>
+
+
+      {% else %}
+          <p>oh...no</p>
+      {% endif %}
+  </div>
+</div>
+<div id="Con3">
+    <div class="name3">
+        <p class="name_23">ახალი პოსტები</p>
+    </div>
+    <div class="posts">
+        {% if articles %}
+            {% for el in articles[:3]%}
+
+                <div class="post-item">
+                    <a href="/kar/news/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+                    {% if el.image_path %}
+                    <a href="/news/{{ el.id }}">
+                      <img class="post-image" src="{{ el.image_path }}" alt="oh..no">
+                    </a>
+                    {% endif %}
+                    <a href="/kar/news/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+                    <a href="/kar/news/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M')}}</p></a>
+                    <a href="/kar/news/{{ el.id }}"><p id ="ff">მეტი დეტალი</p></a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>oh...no</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

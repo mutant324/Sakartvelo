@@ -1,0 +1,105 @@
+{% extends 'about_geo.html' %}
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Historia1.css') }}">
+{% endblock %}
+
+{% block title %}Photo Georgia{% endblock %}
+
+{% block translate %}
+    <li><a href="/history/{{ artic.id }}"><div class="lung" id="English"><p>English</p></div></a></li>
+    <li><a href="/kar/history/{{ artic.id }}"><div class="lung" id="kar"><p>ქართული</p></div></a></li>
+{% endblock %}
+
+{% block main %}
+<div id="Con2">
+  <div class="posts1">
+      {% if artic %}
+
+              <div class="post-item1">
+                <h1>{{ artic.title }}</h1>
+                 <pre><p>{{ artic.text }}</p><br></pre>
+                {% if artic %}
+                  <img class="myImage" src="{{ artic.image_path }}" alt="oh..no" onclick="openModal('{{ artic.image_path }}', '{{ artic.title }}')">
+                <div id="myModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="img01" src="">
+                    <h1 id ="gf">{{ artic.title }}</h1>
+                </div>
+                {% endif %}
+                  <pre><p>{{ artic.text2 }}</p><br></pre>
+                 {% if artic.image_path1 %}
+                   <img class="myImage" src="{{ artic.image_path1 }}" alt="oh..no" onclick="openModal('{{ artic.image_path1 }}', '{{ artic.title }}')">
+                 <div id="myModal" class="modal">
+                     <span class="close" onclick="closeModal()">&times;</span>
+                     <img class="modal-content" id="img01" src="">
+                     <h1 id ="gf">{{ artic.title }}</h1>
+                 </div>
+                 {% endif %}
+                    <pre><p>{{ artic.text3 }}</p><br><pre>
+                  {% if artic.image_path2 %}
+                    <img id="myImage3" src="{{ artic.image_path2 }}" alt="oh..no" onclick="openModal('{{ artic.image_path2 }}', '{{ artic.title }}')">
+                  <div id="myModal" class="modal">
+                      <span class="close" onclick="closeModal()">&times;</span>
+                      <img class="modal-content" id="img01" src="">
+                      <h1 id ="gf">{{ artic.title }}</h1>
+                  </div>
+                  {% endif %}
+                 <p>{{artic.datetime.strftime('%d.%m.%Y %H:%M') }}</p>
+              </div>
+
+
+      {% else %}
+          <p>oh...no</p>
+      {% endif %}
+  </div>
+
+</div>
+
+<!-- ОДНО модальное окно на всю страницу -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="caption"></div>
+</div>
+
+<div id="Con3">
+    <div class="name3"><p class="name_23">New posts</p></div>
+    <div class="posts">
+      <ul id="menu">
+        <li><a href="/history/1">Origin of the Kartvelian Tribes •</a></li>
+        <li><a href="/history/13">First States  •</a></li>
+        <li><a href="/history/14">Iberia in the Pre-Christian Period  •</a></li>
+        <li><a href="/history/2">Baptism of Georgia  •</a></li>
+        <li><a href="/history/5">5th century in Georgia  •</a></li>
+        <li><a href="/history/7">6th century in Georgia  •</a></li>
+        <li><a href="/history/10">7th-8th centuries  •</a></li>
+        <li><a href="/history/12">Tao-Klarjeti  •</a></li>
+        <li><a href="/history/11">Golden Age  •</a></li>
+        <li><a href="/history/15">Mongol invasion  •</a></li>
+      </ul>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='fff.js') }}"></script>
+<!-- ДОПОЛНИТЕЛЬНЫЙ INLINE-СКРИПТ ДЛЯ ФУНКЦИЙ МОДАЛА (если fff.js не содержит их, или для переопределения) -->
+<script>
+function openModal(imgSrc, title) {
+    document.getElementById('img01').src = imgSrc;
+    document.getElementById('gf').innerHTML = title;
+    document.getElementById('myModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('myModal').style.display = 'none';
+}
+
+// Закрытие модала при клике вне изображения (опционально)
+window.onclick = function(event) {
+    var modal = document.getElementById('myModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+</script>
+{% endblock %}

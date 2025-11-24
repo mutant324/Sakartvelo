@@ -1,0 +1,51 @@
+
+{% extends 'about_geo.html' %}
+  {%block link%}  <link rel="stylesheet" href="{{url_for('static', filename='css/Historia.css')}}">{% endblock%}
+  {%block title%} Photo Georgia{% endblock%}
+  {%block translate%}<li><a href="/history"><div class="lung" id="English"><p>English</p></div></a></li>
+    <li><a href="/kar/history"><div class="lung" id="kar"><p>ქართული</p></div></a></li>{% endblock%}
+
+  {%block main%}
+  <div id="Con2">
+    <div class="posts1">
+        {% if artic %}
+            {% for el in artic %}
+                <div class="post-item1">
+                  <div id =popa>  <a href="/history/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+                    {% if el.image_path %}
+                    <a href="/history/{{ el.id }}">
+                      <img  id="myImage" src="{{ el.image_path }}" alt="oh..no"  >
+                    </a>
+                    {% endif %}
+                    <a href="/history/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+                    <a href="/history/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M') }}</p></a>
+                  </div>
+                    <div id=jopa><a href="/history/{{ el.id }}"><p id ="fffd">more details</p></a></div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>oh...no</p>
+        {% endif %}
+    </div>
+  </div>
+  <div id="Con3">
+    <div class="name3">
+        <p class="name_23">important events</p>
+    </div>
+    <div class="posts">
+      <ul id="menu">
+        <li><a href="/history/1">Origin of the Kartvelian Tribes •</a></li>
+        <li><a href="/history/13">First States  •</a></li>
+        <li><a href="/history/14">Iberia in the Pre-Christian Period  •</a></li>
+        <li><a href="/history/2">Baptism of Georgia  •</a></li>
+        <li><a href="/history/5">5th century in Georgia  •</a></li>
+        <li><a href="/history/7">6th century in Georgia  •</a></li>
+        <li><a href="/history/10">7th-8th centuries  •</a></li>
+        <li><a href="/history/12">Tao-Klarjeti  •</a></li>
+        <li><a href="/history/11">Golden Age  •</a></li>
+        <li><a href="/history/15">Mongol invasion  •</a></li>
+      </ul>
+    </div>
+</div>
+
+  {% endblock%}

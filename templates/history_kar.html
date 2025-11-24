@@ -1,0 +1,51 @@
+
+{% extends 'about_geo_kar.html' %}
+  {%block link%}  <link rel="stylesheet" href="{{url_for('static', filename='css/Historia_kar.css')}}">{% endblock%}
+  {%block title%} Photo Georgia{% endblock%}
+  {%block translate%}<li><a href="/history"><div class="lung" id="English"><p>English</p></div></a></li>
+    <li><a href="/kar/history"><div class="lung" id="kar"><p>ქართული</p></div></a></li>{% endblock%}
+
+  {%block main%}
+  <div id="Con2">
+    <div class="posts1">
+        {% if artic %}
+            {% for el in artic %}
+                <div class="post-item1">
+                  <div id =popa>  <a href="/kar/history/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+                    {% if el.image_path %}
+                    <a href="/kar/history/{{ el.id }}">
+                      <img  id="myImage" src="{{ el.image_path }}" alt="oh..no"  >
+                    </a>
+                    {% endif %}
+                    <a href="/kar/history/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+                    <a href="/kar/history/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M') }}</p></a>
+                  </div>
+                    <div id=jopa><a href="/kar/history/{{ el.id }}"><p id ="fffd">მეტი დეტალი</p></a></div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>oh...no</p>
+        {% endif %}
+    </div>
+  </div>
+  <div id="Con3">
+    <div class="name3">
+        <p class="name_23">მნიშვნელოვანი დღეები</p>
+    </div>
+    <div class="posts">
+      <ul id="menu">
+        <li><a href="/history/1">ქართველური ტომების წარმოშობა •</a></li>
+        <li><a href="/kar/history/13">პირველი სახელმწიფოები  •</a></li>
+        <li><a href="/kar/history/14">იბერია წინაქრისტიანულ პერიოდში  •</a></li>
+        <li><a href="/kar/history/2">საქართველოს ნათლობა  •</a></li>
+        <li><a href="/kar/history/5">მე-5 საუკუნე საქართველოში  •</a></li>
+        <li><a href="/kar/history/7">მე-6 საუკუნე საქართველოში  •</a></li>
+        <li><a href="/kar/history/10">მე-7-8 საუკუნეები  •</a></li>
+        <li><a href="/kar/history/12">ტაო-კლარაცია  •</a></li>
+        <li><a href="/kar/history/11">ოქროს ხანა  •</a></li>
+        <li><a href="/kar/history/15">მონღოლთა შემოსევა  •</a></li>
+      </ul>
+    </div>
+</div>
+
+  {% endblock%}

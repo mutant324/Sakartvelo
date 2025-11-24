@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  background: #B8BFC6;
+  min-height: 100vh; /* Минимум на весь экран, но растягивается под контент */
+  width: 100%;
+}
+
+/* Main container */
+#Main_div_container {
+  min-height: 85vh; /* Минимум на весь экран, но растягивается под контент */
+  width: 1440px;
+
+  background-image: url('Photo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#headr_con,
+#footer_con {
+  height: 170px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#headr_con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#head_con_pic {
+  position: relative;
+  left: -1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 195px;
+}
+
+#head_con_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80px;
+  height: 130px;
+  width: 394px;
+}
+
+#head_con_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 618px;
+  margin-left: 100px;
+}
+
+#head_main {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+#head_main li {
+
+  font-family: 'Marko One', cursive;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+
+  /* Кнопка */
+  height: 34px;
+  width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #585B5B;
+  border: 5px solid #515454;
+  border-radius: 15px;
+
+
+  line-height: normal;
+}
+
+#head_main li:first-of-type {
+  margin-left: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+#geo {
+  height: 90px;
+  width: 174px;
+  background-image: url('Georgia1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#main_con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color:white;
+  min-height: 2166px; /* Минимум на весь экран, но растягивается под контент  */
+  width: 100%;
+  overflow-wrap: break-word; /* Перенос длинных слов */
+  word-wrap: break-word;
+}
+#container_photo{
+  display: flex;
+
+
+  width: 90%;
+  min-height: 2000px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 15px
+
+
+}
+
+#h11t{
+    font-family: 'Marko One', cursive;
+   font-size: 40px;
+
+}
+input{
+
+    width: 300px;
+    font-family: 'Marko One', cursive;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+#sum{
+  width: 100px
+}
+.articless{
+  display: flex;
+  flex-direction: row;
+
+
+
+}
+.article{
+  text-align: center;
+  height: 200px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 15px;
+  margin-left: 10px
+}
+#footer_con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#block{
+  font-family: 'Marko One', cursive;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  height: 80%;
+  width: 90%;
+
+}
+#media{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#media_con  li{
+  display: inline-block;
+
+}
+.meedia{
+  height: 70px;
+  width: 68px;
+  background-color: black;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+
+}
+#tgk{
+background-color: #28A7E8;
+background-image: url('tgk.png');
+background-repeat: no-repeat;
+background-size:cover;
+}
+#facebook{
+background-color: #0866FF;
+background-image: url('face.png');
+background-repeat: no-repeat;
+background-size:cover;
+}
+#inst_new{
+background-color: #9806BC;
+background-image: url('inst.png');
+background-repeat: no-repeat;
+background-size:cover;
+}

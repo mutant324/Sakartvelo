@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  background: #B8BFC6;
+  min-height: 100vh; /* Минимум на весь экран, но растягивается под контент */
+  width: 100%;
+}
+
+/* Main container */
+#Main_div_container {
+  min-height: 85vh; /* Минимум на весь экран, но растягивается под контент */
+  width: 1440px;
+min-height: auto;
+  background-image: url('histor.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#headr_con,
+#footer_con {
+  height: 170px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#headr_con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#head_con_pic {
+  position: relative;
+  left: -1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 195px;
+}
+
+#head_con_search {
+  display: flex;
+
+  align-items: center;
+gap:20px;
+  height: 130px;
+  width: 394px;
+}
+#head_lister{
+  list-style: none;}
+.lung{
+
+margin-top: 10px;
+  color: white;
+  text-align: center;
+width: 100px;
+height: 20px;
+background-color:#585B5B;
+border: 4px solid #515454;
+border-radius: 15px;
+}
+
+
+#head_con_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 618px;
+  margin-left: 100px;
+}
+
+#head_main {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+#head_main li {
+
+  font-family: 'Marko One', cursive;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+
+  /* Кнопка */
+  height: 34px;
+  width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #585B5B;
+  border: 5px solid #515454;
+  border-radius: 15px;
+
+
+  line-height: normal;
+}
+
+#head_main li:first-of-type {
+  margin-left: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+#geo {
+  height: 90px;
+  width: 174px;
+  background-image: url('Georgia1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#main_con{
+  display: flex; /* Flex для горизонтального размещения колонок */
+  justify-content: space-between; /* Распределяем колонки: Con1 слева, Con2 центр, Con3 справа */
+  align-items: flex-start; /* Выравниваем по верху, без центрирования */
+  color:white;
+  padding-top: 20px; /* Отступ сверху, чтобы не прилипать к шапке */
+  min-height: auto;
+  width: 100%;
+  overflow-wrap: break-word; /* Перенос длинных слов */
+  word-wrap: break-word;
+  gap: 25px; /* Отступы между колонками вместо margin-left */
+}
+#Con1, #Con2, #Con3{
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 15px;
+  flex: 1; /* Con2 займёт 70% (как было), Con1 и Con3 — по 15% */
+}
+#Con1{
+  width: 330px;
+  flex: none; /* Фиксированная ширина для боковых колонок */
+  height: 1500px; /* Если нужно фиксировать высоту */
+}
+#Con2{
+  color:black;
+  width: 70%; /* Как было */
+  min-height: 1830px; /* Минимальная высота */
+  flex: 3; /* Con2 растягивается */
+  margin-left: 20px;
+
+}
+#Con3{
+  position: relative; /* Исправлено: убрал invalid display: fixed */
+  flex-wrap: wrap;
+  align-items: center;
+  width: 330px;
+  flex: none; /* Фиксированная ширина */
+  margin-right: 20px; /* Убрал, gap в main_con обработает */
+  height: auto;
+}
+.name,.name3{
+  z-index: 1;
+  position: relative;
+
+  text-align: center;
+  width: 100%;
+  height: 94px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+
+
+
+}
+.name_2,.name_23{
+  font-family: 'Marko One', cursive;
+  font-size: 25px;
+  position: relative;
+  top:30%;
+
+
+}
+
+.name3{
+top: 0px
+
+}
+
+.posts{
+
+  color:black;
+  height: 900px;
+  width: 100%;
+
+
+}
+.post-item{
+  padding: 20px;
+  color:white;
+  margin-top:10px;
+  margin-left: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 15px;
+  height: 32%;
+  width:260px;
+}
+.post-item h2{
+  text-align: center;
+}
+img{
+  position: relative;
+  left:70px;
+  height: 130px;
+  width: 130px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+#Con2{
+
+}
+.posts1{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  color:black;
+  height: 100%;
+  width: 100%;
+
+}
+.post-item1{
+  padding: 5px;
+  font-size: 13px;
+  margin-top: 30px;
+  margin-left: 10px;
+    margin-right: 10px;
+  display: block;
+  height: 100%;
+  width: 280px;
+    margin-left: 10px;
+  align-items: center;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 15px;
+}
+.post-item1 h2{
+  text-align: center;
+}
+
+.post-item #ff{
+  margin-left: 60%;
+  text-align: center;
+display: inline-block;
+background-color: #242424;
+height: 20px;
+width: 100px;
+border: 1px solid black;
+border-radius: 10px;
+
+}
+.post-item1 #fffd{
+  text-align: center;
+display: inline-block;
+background-color: #242424;
+height: 20px;
+width: 100px;
+border: 1px solid black;
+border-radius: 10px;
+
+}
+#popa{
+
+}
+#jopa{display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+  height: 10%
+}
+#footer_con{
+  margin-top: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#block{
+  font-family: 'Marko One', cursive;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  height: 80%;
+  width: 90%;
+
+}
+#media{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#media_con  li{
+  display: inline-block;
+
+}
+.meedia{
+  height: 70px;
+  width: 68px;
+  background-color: black;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+
+}
+#tgk{
+background-color: #28A7E8;
+background-image: url('tgk.png');
+background-repeat: no-repeat;
+background-size:cover;
+}
+#facebook{
+background-color: #0866FF;
+background-image: url('face.png');
+background-repeat: no-repeat;
+background-size:cover;
+}
+#inst_new{
+background-color: #9806BC;
+background-image: url('inst.png');
+background-repeat: no-repeat;
+background-size:cover;
+}
+.posts{
+  font-family: 'Marko One', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 20px;
+    margin-bottom: 25px;
+width: 95%;
+height: 80%;
+}
+#menu li {
+
+display: block;
+width: 300px;
+
+}
+#menu {
+
+  position: relative;
+right: 13px;
+    text-align: right;
+  color: white;
+  font-size: 20px;
+   display: flex;
+   flex-direction: row-reverse; /* ← отражает порядок: справа налево */
+   flex-wrap: wrap;
+   gap: 20px;
+   padding: 0;
+   margin: 0;
+
+}

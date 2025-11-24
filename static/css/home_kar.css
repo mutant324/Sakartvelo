@@ -1,0 +1,464 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background: #B8BFC6;
+
+  height: 4400px;
+  width: 100%;
+}
+
+/* Main container */
+#Main_div_container {
+  height: 4400px;
+  width: 1530px;
+
+  background-image: url('dada.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Header & Footer */
+#headr_con,
+#footer_con {
+  height: 170px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#headr_con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#head_con_pic {
+  position: relative;
+  left: -1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 195px;
+}
+
+#head_con_search {
+  display: flex;
+
+  align-items: center;
+gap:20px;
+  height: 130px;
+  width: 394px;
+}
+#head_lister{
+  list-style: none;}
+.lung{
+
+margin-top: 10px;
+  color: white;
+  text-align: center;
+width: 100px;
+height: 20px;
+background-color:#585B5B;
+border: 4px solid #515454;
+border-radius: 15px;
+}
+
+
+#head_con_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 618px;
+  margin-left: 100px;
+}
+
+#head_main {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+#head_main li {
+
+  font-family: 'Marko One', cursive;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+
+  /* Кнопка */
+  height: 34px;
+  width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #585B5B;
+  border: 5px solid #515454;
+  border-radius: 15px;
+
+
+  line-height: normal;
+}
+
+#head_main li:first-of-type {
+  margin-left: 0;
+}
+
+#img{
+  width: 95px;
+  height: 89px;
+  background-size:cover;
+
+}
+
+.ms {
+  margin: 0;
+  padding: 0;
+}
+
+/* Флаг */
+#geo {
+  position: relative;
+  left:-50px;
+  height: 90px;
+  width: 174px;
+  background-image: url('Georgia1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;     /* чтобы ссылка занимала всю кнопку */
+  width: 100%;
+  height: 100%;
+  display: flex;      /* центр текста внутри ссылки */
+  justify-content: center;
+  align-items: center;
+}
+
+
+                              /* конец адаптива шапки */
+
+/* Blocks */
+.block {
+  height: 1040px;
+  width: 100%;
+
+
+}
+
+.block:nth-of-type(1) {
+
+  height: 1016px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.block:nth-of-type(2) {
+  height: 1422px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.block:nth-of-type(3) {
+  height: 1621px;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+#main_block_photo{
+  position: relative;
+  top:-350px;
+  left:-230px;
+  width: 1080px;
+  height: 928px;
+  background-image: url('FLAG.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+#main_con_basiss{
+  color:white;
+  position: relative;
+  top:320px;
+  left:150px;
+  height: 445px;
+  width: 1180px;
+  z-index: 1;
+  font-family: 'Marko One', cursive;
+  font-size:50px;
+}
+#main_hight_basiss1{
+  text-align: center;
+  position: relative;
+    margin-bottom: 20px;
+    font-size:160px;
+    left:80px;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 1000px;
+    height:240px;
+    border: 1px solid rgba(0, 0, 0, 0.0);
+    border-radius: 70px
+}
+#basiss1{
+  text-align: center;
+  width: 1150px;
+  position: relative;
+  top:0px;
+  left:0px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  border-radius: 70px
+}
+#basiss2{
+  text-align: center;
+  width: 1050px;
+  position: relative;
+  top:0px;
+  left:50px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  border-radius: 70px
+}
+#basiss3{
+  text-align: center;
+  width: 700px;
+  position: relative;
+  left:240px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  border-radius: 70px
+}
+                        /* адаптация основы  часть 1 */
+
+
+                        /* конец адаптации основы  часть 1 */
+                        /* адаптация основы  часть 2 */
+#block2_big_text{
+  font-family: 'Marko One', cursive;
+    font-size:140px;
+  text-align: center;
+  width: 867px;
+  height:165px;
+}
+#block2_text{
+text-align: center;
+font-family: 'Marko One', cursive;
+font-size:40px;
+width: 867px;
+  height:526px;
+}
+
+#block2_redirect{
+  position: relative;
+  left:300px;
+  top:-20px;
+  font-family: 'Marko One', cursive;
+  font-size:40px;
+  height:61px;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  border-radius: 20px
+}
+#block2_con_text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+  z-index: 1;
+  position: relative;
+  top:300px;
+  left:-270px;
+  width: 871px;
+  height:764px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  border-radius: 70px
+}
+
+
+#block2_pic{
+  z-index: 0;
+  position: relative;
+  left:80px;
+  top:-750px;
+  width: 1370px;
+  height: 1404px;
+  background-image: url('Geo_bro.png');
+
+}
+                              /* адаптация основы  часть 3 */
+#block3_con_text{
+    position: relative;
+  top:-3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+
+
+  width: 1019px;
+  height:1400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  border-radius: 70px
+}
+#block3_text{
+  position: relative;
+  top:-100px;
+text-align: center;
+font-family: 'Marko One', cursive;
+font-size:40px;
+width: 1019px;
+height:888px;
+}
+#block3_big_text{
+  position: relative;
+  top:-50px;
+  font-family: 'Marko One', cursive;
+    font-size:160px;
+  text-align: center;
+  width: 1019px;
+  height:187px;
+}
+#text1{
+  text-align: center;
+}
+#block3_redirect{
+  text-align: center;
+  position: relative;
+  left:360px;
+
+  font-family: 'Marko One', cursive;
+  font-size:40px;
+  height:61px;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  border-radius: 20px
+}
+#footer_con{
+  column-gap: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#block{
+  font-family: 'Marko One', cursive;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  height: 80%;
+  width: 90%;
+
+
+}
+
+#media_con  li{
+  display: inline-block;
+
+}
+.meedia{
+  height: 60px;
+  width: 60px;
+  background-color: black;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+
+}
+#tgk{
+background-color: #28A7E8;
+background-image: url('tgk.png');
+background-repeat: no-repeat;
+background-size:cover;
+}
+#facebook{
+background-color: #0866FF;
+background-image: url('face.png');
+background-repeat: no-repeat;
+background-size:cover;
+}
+#inst_new{
+background-color: #9806BC;
+background-image: url('inst.png');
+background-repeat: no-repeat;
+background-size:cover;
+}
+#block0_redirect{
+  position: relative;
+  left:850px;
+  top:20px;
+  font-family: 'Marko One', cursive;
+  font-size:40px;
+  height:61px;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  border-radius: 20px
+}
+@media (max-width: 364px){
+
+
+  #main_hight_basiss1{
+
+  font-size:140px;
+  }
+  #basiss1{
+
+  font-size:40px;
+
+  }
+  #basiss2{
+  font-size:40px;
+  }
+  #basiss3{
+  font-size:40px;
+
+  }
+
+
+
+  #block2_big_text p{
+
+  font-size:115px;
+  }
+  #block2_text {
+
+  font-size:38px;
+
+  }
+  #block3_big_text p{
+
+  font-size:130px;
+  }
+  #text1 {
+    position: relative;
+
+  font-size:37px;
+
+}
+}

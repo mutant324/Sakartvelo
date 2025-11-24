@@ -1,0 +1,24 @@
+{% extends 'about_geo.html' %}
+  {%block link%}  <link rel="stylesheet" href="{{url_for('static', filename='css/posts.css')}}">{% endblock%}
+  {%block title%} Photo Georgia{% endblock%}
+  {%block main%}
+  <div id="container_photo">
+    <div class="articless">
+
+
+        {% for article in articles %}  <!-- Открытие цикла -->
+          <div class="article">
+              <p>id {{ article.id }}</p>
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.intro }}</p>
+      
+
+              <a href="/posts/{{article.id}}">Подробнее</a>
+              <a href="/posts/{{article.id}}/delete">удалить</a>
+
+              <p>Дата: {{ article.datetime.date() }}</p>
+          </div>
+
+        {% endfor %}  <!-- Обязательно закройте цикл здесь! -->
+    </div>
+    {% endblock %}  <!-- Только после этого блок -->

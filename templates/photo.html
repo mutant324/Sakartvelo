@@ -1,0 +1,70 @@
+{% extends 'about_geo.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/photo.css') }}">
+{% endblock %}
+
+{% block title %}
+Photo Georgia
+{% endblock %}
+{%block translate%}<li><a href="/photo"><div class="lung" id="English"><p>English</p></div></a></li>
+  <li><a href="/kar/photo"><div class="lung" id="kar"><p>ქართული</p></div></a></li>{% endblock%}
+
+
+{% block main %}
+<div id="container_photo">
+    <div>
+        <div class="posts">
+            {% if article %}
+                {% for el in article %}
+                    <div class="post-item">
+                        <a>
+              
+                        </a>
+                        <!-- ИСПРАВЛЕНО: /photo вместо /news -->
+                        {% if el.image_path %}
+                            <img class="myImage" src="{{ el.image_path }}" alt="oh..no" onclick="openModal('{{ el.image_path }}', '{{ el.title }}')">
+                        {% endif %}
+                        <a>
+                            <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M') }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>oh...no</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- ЕДИНСТВЕННЫЙ МОДАЛЬНОЕ ОКНО ВНЕ ЦИКЛА -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()"></span>
+    <img class="modal-content" id="img01" src="">
+    <h1 id="gf"></h1>
+</div>
+
+{% block js %}
+<script src="{{ url_for('static', filename='fff.js') }}"></script>
+<!-- ДОПОЛНИТЕЛЬНЫЙ INLINE-СКРИПТ ДЛЯ ФУНКЦИЙ МОДАЛА (если fff.js не содержит их, или для переопределения) -->
+<script>
+function openModal(imgSrc, title) {
+    document.getElementById('img01').src = imgSrc;
+    document.getElementById('gf').innerHTML = title;
+    document.getElementById('myModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('myModal').style.display = 'none';
+}
+
+// Закрытие модала при клике вне изображения (опционально)
+window.onclick = function(event) {
+    var modal = document.getElementById('myModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+</script>
+{% endblock %}
+{% endblock %}

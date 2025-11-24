@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=7.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" href="/static/css/Georgia2.png" type="image.png" sizes="16x32">
+  {%block link%}  <link rel="stylesheet" href="{{url_for('static', filename='css/info1_kar.css')}}">{% endblock%}
+    <title>{%block title%} About Georgia{% endblock%}</title>
+  </head>
+  <body>
+    <div id="Main_div_container">
+      <!-- Это шапка -->
+      <header id="headr_con">
+        <div id="head_con_pic">
+          <a href="/"><div id="geo"></div></a>
+        </div>
+        <div id="head_con_search">
+          <ul id ="head_lister">
+            {%block translate%}<li><a href="/info/{{ artic.id }}"><div class="lung" id="English"><p>English</p></div></a></li>
+              <li><a href="/kar/info/{{ artic.id }}"><div class="lung" id="kar"><p>ქართული</p></div></a></li>{% endblock%}
+
+          </ul>
+        </div>
+        <div id="head_con_main">
+          <div id="fixed"></div>
+          <div id ="main_fon">
+            <!--   <input type="checkbox" id= "burger_toggle">
+            <label id="label" for="checkbox">
+              <span id ="span"></span>
+            </label>-->
+            <ul id="head_main" class="overlay">
+              <li><div class="main"><a href="/kar/news"><p class="ms">სიახლეები</p></a></div></li>
+              <li><div class="main"><a href="/kar/info"><p class="ms">საქართველო</p></a></div></li>
+              <li><div class="main"><a href="/kar/history"><p class="ms">ისტორია საქართველო</p></a></div></li>
+              <li><div class="main"><a href="/kar/photo"><p class="ms">ფოტო</p></a></div></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <!-- Конец шапки -->
+      <!-- Это основа -->
+      <main id="main_con">
+        {%block main%}
+        <div id="Con1">
+          <div class="name"><p class="name_2">საინტერესო ფაქტები</p></div>
+          <div class="pos">
+            <ul id="menu">
+              <li><a href="/history/1">•  Niko Pirosmani</a></li>
+              <li><a href="/history/13">•  Zakharia Paliashvili</a></li>
+              <li><a href="/history/14">•  Ivane Javakhishvili </a></li>
+              <li><a href="/history/2">•  Akaki Tsereteli </a></li>
+              <li><a href="/history/5">•  Ilia Chavchavadze</a></li>
+              <li><a href="/history/7">•  Queen Tamar</a></li>
+              <li><a href="/history/10">•  Shota Rustaveli</a></li>
+              <li><a href="/history/12">•  Kaikhosro Cholokashvili </a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="Con2">
+          <div class="posts1">
+              {% if artic %}
+
+                      <div class="post-item1">
+                        <h1>{{ artic.title }}</h1>
+                         <pre><p>{{ artic.text }}</p><br></pre>
+                        {% if artic %}
+                          <img class="myImage" src="{{ artic.image_path }}" alt="oh..no" onclick="openModal('{{ artic.image_path }}', '{{ artic.title }}')">
+                        <div id="myModal" class="modal">
+                            <span class="close" onclick="closeModal()">&times;</span>
+                            <img class="modal-content" id="img01" src="">
+                            <h1 id ="gf">{{ artic.title }}</h1>
+                        </div>
+                        {% endif %}
+                          <pre><p>{{ artic.text2 }}</p><br></pre>
+                         {% if artic.image_path1 %}
+                           <img class="myImage" src="{{ artic.image_path1 }}" alt="oh..no" onclick="openModal('{{ artic.image_path1 }}', '{{ artic.title }}')">
+                         <div id="myModal" class="modal">
+                             <span class="close" onclick="closeModal()">&times;</span>
+                             <img class="modal-content" id="img01" src="">
+                             <h1 id ="gf">{{ artic.title }}</h1>
+                         </div>
+                         {% endif %}
+                            <pre><p>{{ artic.text3 }}</p><br><pre>
+                          {% if artic.image_path2 %}
+                            <img id="myImage3" src="{{ artic.image_path2 }}" alt="oh..no" onclick="openModal('{{ artic.image_path2 }}', '{{ artic.title }}')">
+                          <div id="myModal" class="modal">
+                              <span class="close" onclick="closeModal()">&times;</span>
+                              <img class="modal-content" id="img01" src="">
+                              <h1 id ="gf">{{ artic.title }}</h1>
+                          </div>
+                          {% endif %}
+                         <p>{{artic.datetime.strftime('%d.%m.%Y %H:%M') }}</p>
+                      </div>
+
+
+              {% else %}
+                  <p>oh...no</p>
+              {% endif %}
+          </div>
+        </div>
+        <div id="Con3">
+          <div class="name">
+              <p class="name_2">ახალი პოსტები</p>
+          </div>
+          <div class="posts">
+              {% if articles %}
+                  {% for el in articles[:3]%}
+
+                      <div class="post-item">
+                          <a href="/kar/info/{{ el.id }}"> <h2>{{ el.title }}</h2></a>
+                          {% if el.image_path %}
+                          <a href="/info/{{ el.id }}">
+                            <img class="post-image" src="{{ el.image_path }}" alt="oh..no">
+                          </a>
+                          {% endif %}
+                          <a href="/kar/info/{{ el.id }}"> <p>{{ el.intro }}</p></a>
+                          <a href="/kar/info/{{ el.id }}"> <p>{{ el.datetime.strftime('%d.%m.%Y %H:%M')}}</p></a>
+                          <a href="/kar/info/{{ el.id }}"><p id ="ff">Подробнее</p></a>
+                      </div>
+                  {% endfor %}
+              {% else %}
+                  <p>oh...no</p>
+              {% endif %}
+                <script src="{{ url_for('static', filename='fff.js') }}"></script>
+          </div>
+        {% endblock%}
+      </main>
+      <!-- Конец основы -->
+      <!-- Это стопа -->
+      <footer id="footer_con">
+        <div id="block">  <!-- Исправлено: "bockk" → "block", добавлены кавычки -->
+      <a href="/kar/police"><div id="big_title"><h1>კონფიდენციალურობის პოლიტიკა</h1></div><a>  <!-- Исправлен <h1> -->
+        <div id="me">მე</div>
+        <div id="media">
+          <ul id ="media_con">
+
+            <li><a href="https://www.facebook.com/share/1BcCEKN6wP/"><div class="meedia"  id="facebook"></div></a></li>  <!-- Закрыт <a> -->
+            <li><a href="https://www.instagram.com/nikTkopl/"><div  class="meedia" id="inst_new"></div></a></li>  <!-- Закрыт <a> -->
+          </ul>
+        </div>
+    </div>
+      </footer>
+      <!-- Конец стопы -->
+    </div>
+    {% block jss %}
+    <script src="{{ url_for('static', filename='fff.js') }}"></script>
+    <!-- ДОПОЛНИТЕЛЬНЫЙ INLINE-СКРИПТ ДЛЯ ФУНКЦИЙ МОДАЛА (если fff.js не содержит их, или для переопределения) -->
+    <script>
+    (function () {
+      function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+
+      function adjustBody() {
+        if (isMobile()) {
+          document.body.style.display = 'block';
+          document.body.style.height = 'auto'; // иначе 4400px обрежет контент
+        }
+        // Иначе ничего не делаем — остаётся flex из CSS
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', adjustBody);
+      } else {
+        adjustBody();
+      }
+    })();
+    </script>
+
+
+    {% endblock %}
+  </body>
+</html>
